@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology XML Questions with Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Gochi+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Patrick Hand', cursive;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            background-image: linear-gradient(#e6e6e6 1px, transparent 1px), linear-gradient(90deg, #e6e6e6 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #ccc;
+        }
+        
+        h1 {
+            font-family: 'Gochi Hand', cursive;
+            font-size: 42px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-family: 'Gochi Hand', cursive;
+            font-size: 32px;
+            margin: 25px 0 15px;
+            color: #3498db;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        h3 {
+            font-family: 'Gochi Hand', cursive;
+            font-size: 26px;
+            color: #e74c3c;
+            margin: 20px 0 15px;
+        }
+        
+        .subject {
+            font-size: 22px;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .marks-badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 16px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        .question-container {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #fffff8;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .question {
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .solution {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #2ecc71;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        
+        .solution h4 {
+            color: #27ae60;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .code {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 12px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 16px;
+        }
+        
+        .group {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f0f7ff;
+            border-radius: 8px;
+            border: 1px solid #cce5ff;
+        }
+        
+        .group-title {
+            font-family: 'Gochi Hand', cursive;
+            font-size: 28px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px dashed #ccc;
+        }
+        
+        .toggle-solution {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .toggle-solution:hover {
+            background-color: #2980b9;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+            color: #7f8c8d;
+            padding-top: 20px;
+            border-top: 2px dashed #ccc;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            h2 {
+                font-size: 26px;
+            }
+            
+            h3 {
+                font-size: 22px;
+            }
+            
+            .question {
+                font-size: 18px;
+            }
+            
+            .solution {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+            
+            h2 {
+                font-size: 22px;
+            }
+            
+            .group-title {
+                font-size: 24px;
+            }
+            
+            .question {
+                font-size: 16px;
+            }
+            
+            .marks-badge {
+                font-size: 14px;
+                padding: 2px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Web Technology XML Questions <span class="marks-badge">With Solutions</span></h1>
+            <p class="subject">CSIT.316 - Fifth Semester</p>
+        </div>
+        
+        <div class="content">
+            <h2>XML Related Questions with Solutions</h2>
+            
+            <div class="group">
+                <h3 class="group-title">Group A: Very Short Answer Questions <span class="marks-badge">3 marks each</span></h3>
+                
+                <div class="question-container">
+                    <div class="question">1. Why is XML namespace significant?</div>
+                    <button class="toggle-solution">Show Solution</button>
+                    <div class="solution">
+                        <h4>Solution:</h4>
+                        <p>XML namespaces are used to avoid element name conflicts. When using prefixes in XML, a namespace for the prefix must be defined. The namespace can be defined by an xmlns attribute in the start tag of an element.</p>
+                        <p><strong>Key points:</strong></p>
+                        <ul>
+                            <li>Prevents naming conflicts between elements</li>
+                            <li>Provides a way to combine XML documents from different sources without conflicts</li>
+                            <li>Uses URI references to identify namespaces</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <div class="question">2. What is a well formed XML document?</div>
+                    <button class="toggle-solution">Show Solution</button>
+                    <div class="solution">
+                        <h4>Solution:</h4>
+                        <p>A well-formed XML document follows the syntax rules of XML:</p>
+                        <ul>
+                            <li>Must have a root element</li>
+                            <li>All elements must have a closing tag</li>
+                            <li>Tags are case sensitive</li>
+                            <li>Elements must be properly nested</li>
+                            <li>Attribute values must be quoted</li>
+                            <li>Special characters must be properly escaped</li>
+                        </ul>
+                        <div class="code">
+                            &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+                            &lt;note&gt;<br>
+                            &nbsp;&nbsp;&lt;to&gt;John&lt;/to&gt;<br>
+                            &nbsp;&nbsp;&lt;from&gt;Jane&lt;/from&gt;<br>
+                            &nbsp;&nbsp;&lt;body&gt;Don't forget the meeting!&lt;/body&gt;<br>
+                            &lt;/note&gt;
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <div class="question">3. What is #PCDATA?</div>
+                    <button class="toggle-solution">Show Solution</button>
+                    <div class="solution">
+                        <h4>Solution:</h4>
+                        <p>#PCDATA stands for Parsed Character DATA. It is used in XML DTDs to specify that an element contains parseable text data.</p>
+                        <p><strong>Key points:</strong></p>
+                        <ul>
+                            <li>Text that will be parsed by the XML parser</li>
+                            <li>Tags inside the text will be treated as markup</li>
+                            <li>Entities will be expanded</li>
+                        </ul>
+                        <div class="code">
+                            &lt;!ELEMENT note (#PCDATA)&gt;
+                        </div>
+                        <p>This declares that the "note" element can contain any parseable character data.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="group">
+                <h3 class="group-title">Group B: Short Answer Questions <span class="marks-badge">8 marks each</span></h3>
+                
+                <div class="question-container">
+                    <div class="question">1. Differentiate between DTD and XML schema. Also mention the features of XML.</div>
+                    <button class="toggle-solution">Show Solution</button>
+                    <div class="solution">
+                        <h4>Solution:</h4>
+                        <p><strong>Differences between DTD and XML Schema:</strong></p>
+                        <table style="width:100%; border-collapse: collapse; margin: 15px 0;">
+                            <tr style="background-color: #3498db; color: white;">
+                                <th style="padding: 10px; border: 1px solid #2980b9;">DTD</th>
+                                <th style="padding: 10px; border: 1px solid #2980b9;">XML Schema</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Uses non-XML syntax</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Uses XML syntax</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">Limited data types</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Rich set of data types</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">No namespace support</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Full namespace support</td>
+                            </tr>
+                        </table>
+                        
+                        <p><strong>Features of XML:</strong></p>
+                        <ul>
+                            <li>Human and machine readable</li>
+                            <li>Supports Unicode</li>
+                            <li>Platform independent</li>
+                            <li>Can represent complex data structures</li>
+                            <li>Separates data from presentation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <div class="question">2. What is DTD? Explain the creation of external DTD with example.</div>
+                    <button class="toggle-solution">Show Solution</button>
+                    <div class="solution">
+                        <h4>Solution:</h4>
+                        <p>DTD (Document Type Definition) defines the structure and legal elements of an XML document.</p>
+                        
+                        <p><strong>Creating an external DTD:</strong></p>
+                        <p>1. Create a file with .dtd extension (e.g., note.dtd):</p>
+                        <div class="code">
+                            &lt;!ELEMENT note (to, from, heading, body)&gt;<br>
+                            &lt;!ELEMENT to (#PCDATA)&gt;<br>
+                            &lt;!ELEMENT from (#PCDATA)&gt;<br>
+                            &lt;!ELEMENT heading (#PCDATA)&gt;<br>
+                            &lt;!ELEMENT body (#PCDATA)&gt;
+                        </div>
+                        
+                        <p>2. Reference the DTD in your XML document:</p>
+                        <div class="code">
+                            &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+                            &lt;!DOCTYPE note SYSTEM "note.dtd"&gt;<br>
+                            &lt;note&gt;<br>
+                            &nbsp;&nbsp;&lt;to&gt;John&lt;/to&gt;<br>
+                            &nbsp;&nbsp;&lt;from&gt;Jane&lt;/from&gt;<br>
+                            &nbsp;&nbsp;&lt;heading&gt;Reminder&lt;/heading&gt;<br>
+                            &nbsp;&nbsp;&lt;body&gt;Don't forget the meeting!&lt;/body&gt;<br>
+                            &lt;/note&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="group">
+                <h3 class="group-title">Group C: Long Answer Questions <span class="marks-badge">12 marks each</span></h3>
+                
+                <div class="question-container">
+                    <div class="question">1. Define XML schema. What are the rules of writing XML? Generate the XML and XML schema for the given problem. Create a root element say class with child student and student have further three child Fname, Lname and age where Fname and Lname must be string type and age should be integer. And should be in proper sequence also.</div>
+                    <button class="toggle-solution">Show Solution</button>
+                    <div class="solution">
+                        <h4>Solution:</h4>
+                        <p><strong>XML Schema</strong> is an XML-based alternative to DTD that describes the structure of an XML document.</p>
+                        
+                        <p><strong>Rules for writing XML:</strong></p>
+                        <ul>
+                            <li>Must have a root element</li>
+                            <li>All elements must have a closing tag</li>
+                            <li>XML tags are case sensitive</li>
+                            <li>Elements must be properly nested</li>
+                            <li>Attribute values must be quoted</li>
+                        </ul>
+                        
+                        <p><strong>XML Schema (class.xsd):</strong></p>
+                        <div class="code">
+                            &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+                            &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;<br>
+                            &nbsp;&nbsp;&lt;xs:element name="class"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="student" maxOccurs="unbounded"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="Fname" type="xs:string"/&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="Lname" type="xs:string"/&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="age" type="xs:integer"/&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:element&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;<br>
+                            &nbsp;&nbsp;&lt;/xs:element&gt;<br>
+                            &lt;/xs:schema&gt;
+                        </div>
+                        
+                        <p><strong>XML Document (class.xml):</strong></p>
+                        <div class="code">
+                            &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+                            &lt;class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xsi:noNamespaceSchemaLocation="class.xsd"&gt;<br>
+                            &nbsp;&nbsp;&lt;student&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;Fname&gt;John&lt;/Fname&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;Lname&gt;Doe&lt;/Lname&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;age&gt;20&lt;/age&gt;<br>
+                            &nbsp;&nbsp;&lt;/student&gt;<br>
+                            &nbsp;&nbsp;&lt;student&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;Fname&gt;Jane&lt;/Fname&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;Lname&gt;Smith&lt;/Lname&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;age&gt;21&lt;/age&gt;<br>
+                            &nbsp;&nbsp;&lt;/student&gt;<br>
+                            &lt;/class&gt;
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <div class="question">2. What are the rules for writing XML? Use XML Complex Type, Sequence and Create schema for a student having attribute with the following restrictions. Name: string type, Roll number: number, Marks: number (Ranges between 0 to 100)</div>
+                    <button class="toggle-solution">Show Solution</button>
+                    <div class="solution">
+                        <h4>Solution:</h4>
+                        <p><strong>Rules for writing XML:</strong></p>
+                        <ul>
+                            <li>Must have a single root element</li>
+                            <li>All elements must have closing tags</li>
+                            <li>XML tags are case sensitive</li>
+                            <li>Elements must be properly nested</li>
+                            <li>Attribute values must be quoted</li>
+                            <li>Special characters must be escaped</li>
+                        </ul>
+                        
+                        <p><strong>XML Schema with restrictions:</strong></p>
+                        <div class="code">
+                            &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+                            &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;<br>
+                            &nbsp;&nbsp;&lt;xs:element name="students"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="student" maxOccurs="unbounded"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="name" type="xs:string"/&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="rollno" type="xs:integer"/&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="marks"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:simpleType&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:restriction base="xs:integer"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:minInclusive value="0"/&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:maxInclusive value="100"/&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:restriction&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:simpleType&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:element&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:element&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;<br>
+                            &nbsp;&nbsp;&lt;/xs:element&gt;<br>
+                            &lt;/xs:schema&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Web Technology - CSIT.316 | Fifth Semester | Questions with Solutions</p>
+        </div>
+    </div>
+
+    <script>
+        // Add toggle functionality for solutions
+        document.querySelectorAll('.toggle-solution').forEach(button => {
+            button.addEventListener('click', function() {
+                const solution = this.nextElementSibling;
+                if (solution.style.display === 'block') {
+                    solution.style.display = 'none';
+                    this.textContent = 'Show Solution';
+                } else {
+                    solution.style.display = 'block';
+                    this.textContent = 'Hide Solution';
+                }
+            });
+        });
+        
+        // Initially hide all solutions
+        document.querySelectorAll('.solution').forEach(solution => {
+            solution.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
